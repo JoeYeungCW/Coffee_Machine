@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class CoffeeMachine {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         static int water = 400;
         static int milk = 540;
         static int bean = 120;
         static int cup  = 9;
         static int money = 550;
+        Scanner scanner = new Scanner(System.in);
         menu();
         action();
     }
@@ -63,7 +63,7 @@ public class CoffeeMachine {
         bean+=scanner.nextInt();
         System.out.println("Write how many disposable cups of coffee you want to add:");
         cup+=scanner.nextInt();
-        menu(water,milk,bean,cup,money);
+        menu();
     }
 
     public static void take(){
@@ -88,11 +88,7 @@ public class CoffeeMachine {
                 break;
             default:
                 break;
-
         }
     }
-
-
-
 }
 
