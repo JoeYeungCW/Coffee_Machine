@@ -4,18 +4,16 @@ import java.util.Scanner;
 public class CoffeeMachine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int water = 400;
-        int milk = 540;
-        int bean = 120;
-        int cup  = 9;
-        int money = 550;
-        menu(water,milk,bean,cup,money);
-        action(scanner,water,milk,bean,cup,money);
-
-
+        static int water = 400;
+        static int milk = 540;
+        static int bean = 120;
+        static int cup  = 9;
+        static int money = 550;
+        menu();
+        action();
     }
 
-    public static void menu(int water,int milk,int bean,int cup,int money){
+    public static void menu(){
         System.out.println("The coffee machine has:");
         System.out.printf("%d ml of water%n",water);
         System.out.printf("%d ml of milk%n",milk);
@@ -25,7 +23,8 @@ public class CoffeeMachine {
 
     }
 
-    public static void buy(Scanner scanner,int water,int milk,int bean,int cup,int money){
+    public static void buy(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:");
         switch (scanner.nextInt()){
             case 1:
@@ -51,10 +50,11 @@ public class CoffeeMachine {
             default:
                 break;
         }
-        menu(water,milk,bean,cup,money);
+        menu();
     }
 
-    public static void fill(Scanner scanner,int water,int milk,int bean,int cup,int money){
+    public static void fill(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Write how many ml of water you want to add:");
         water+=scanner.nextInt();
         System.out.println("Write how many ml of milk you want to add:");
@@ -66,24 +66,25 @@ public class CoffeeMachine {
         menu(water,milk,bean,cup,money);
     }
 
-    public static void take(int water,int milk,int bean,int cup,int money){
+    public static void take(){
         System.out.printf("I gave you $%d%n",money);
         money=0;
-        menu(water,milk,bean,cup,money);
+        menu();
     }
 
-    public static void action(Scanner scanner,int water,int milk,int bean,int cup,int money){
+    public static void action(){
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Write action (buy, fill, take):");
         String action = scanner.next();
         switch(action){
             case "buy":
-                buy(scanner,water,milk,bean,cup,money);
+                buy();
                 break;
             case "fill":
-                fill(scanner,water,milk,bean,cup,money);
+                fill();
                 break;
             case "take":
-                take(water,milk,bean,cup,money);
+                take();
                 break;
             default:
                 break;
