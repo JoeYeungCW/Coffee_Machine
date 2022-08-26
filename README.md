@@ -1,6 +1,6 @@
 Coffee Machine project from Hyperskill (https://hyperskill.org/projects/33?track=8)
 
-There are six stages of the project.
+There are five stages of the project.
 
  Stage 1: Making coffee
  
@@ -12,4 +12,3 @@ There are six stages of the project.
  
  Stage 5: Keep track of the supplies
  
- Stage 6: Brush up your code
